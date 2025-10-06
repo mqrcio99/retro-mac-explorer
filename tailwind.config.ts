@@ -80,10 +80,56 @@ export default {
             height: "0",
           },
         },
+        "boot-fade": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.95)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+        },
+        "window-pop": {
+          "0%": {
+            opacity: "0",
+            transform: "scale(0.9) translateY(20px)",
+          },
+          "50%": {
+            transform: "scale(1.02) translateY(-5px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "scale(1) translateY(0)",
+          },
+        },
+        "blink": {
+          "0%, 49%": {
+            opacity: "1",
+          },
+          "50%, 100%": {
+            opacity: "0",
+          },
+        },
+        "typing": {
+          "0%": {
+            width: "0",
+          },
+          "100%": {
+            width: "100%",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "boot-fade": "boot-fade 1s ease-out",
+        "window-pop": "window-pop 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+        "blink": "blink 1s step-end infinite",
+        "typing": "typing 2s steps(40, end)",
+      },
+      fontFamily: {
+        'mono': ['VT323', 'monospace'],
       },
     },
   },
