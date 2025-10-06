@@ -1,54 +1,54 @@
 export const HistoryContent = () => {
   return (
     <div className="space-y-4 font-mono text-sm">
-      <div className="text-lg font-bold mb-4">Macintosh History</div>
+      <div className="text-lg font-bold mb-4">História do Macintosh</div>
       
       <div className="space-y-4">
         <div className="border-l-4 border-primary pl-3">
-          <div className="font-bold">1979 - Project Begins</div>
+          <div className="font-bold">1979 - Início do Projeto</div>
           <div className="text-muted-foreground text-xs mt-1">
-            Jef Raskin initiates the Macintosh project with a vision: 
-            an affordable, easy-to-use computer for everyone.
+            Jef Raskin inicia o projeto Macintosh com uma visão: 
+            um computador acessível e fácil de usar para todos.
           </div>
         </div>
 
         <div className="border-l-4 border-primary pl-3">
-          <div className="font-bold">1981 - Jobs Takes Over</div>
+          <div className="font-bold">1981 - Jobs Assume</div>
           <div className="text-muted-foreground text-xs mt-1">
-            Steve Jobs joins the project after being removed from Lisa team, 
-            bringing his vision of an insanely great product.
+            Steve Jobs entra no projeto após ser removido da equipe Lisa, 
+            trazendo sua visão de um produto insanamente incrível.
           </div>
         </div>
 
         <div className="border-l-4 border-primary pl-3">
-          <div className="font-bold">1982-1983 - Development</div>
+          <div className="font-bold">1982-1983 - Desenvolvimento</div>
           <div className="text-muted-foreground text-xs mt-1">
-            The team works tirelessly on the hardware and software. 
-            Bill Atkinson creates QuickDraw. Susan Kare designs iconic interface elements.
+            A equipe trabalha incansavelmente no hardware e software. 
+            Bill Atkinson cria o QuickDraw. Susan Kare projeta os elementos icônicos da interface.
           </div>
         </div>
 
         <div className="border-l-4 border-primary pl-3">
-          <div className="font-bold">January 22, 1984 - "1984" Ad</div>
+          <div className="font-bold">22 de Janeiro, 1984 - Comercial "1984"</div>
           <div className="text-muted-foreground text-xs mt-1">
-            Ridley Scott's legendary Super Bowl commercial airs, 
-            promising to change computing forever.
+            O lendário comercial de Ridley Scott é exibido no Super Bowl, 
+            prometendo mudar a computação para sempre.
           </div>
         </div>
 
         <div className="border-l-4 border-primary pl-3">
-          <div className="font-bold">January 24, 1984 - Launch</div>
+          <div className="font-bold">24 de Janeiro, 1984 - Lançamento</div>
           <div className="text-muted-foreground text-xs mt-1">
-            The Macintosh is unveiled at Apple's annual shareholders meeting. 
-            It introduces itself by saying "Hello, I'm Macintosh."
+            O Macintosh é revelado na reunião anual de acionistas da Apple. 
+            Ele se apresenta dizendo "Olá, eu sou o Macintosh."
           </div>
         </div>
 
         <div className="mt-6 p-3 bg-muted border border-[hsl(var(--mac-border-dark))]">
           <div className="text-xs">
-            <span className="font-bold">Impact:</span> The Macintosh introduced 
-            the graphical user interface to the mass market, making computers 
-            accessible to non-technical users and forever changing the industry.
+            <span className="font-bold">Impacto:</span> O Macintosh introduziu 
+            a interface gráfica do usuário ao mercado de massa, tornando os computadores 
+            acessíveis a usuários não-técnicos e mudando a indústria para sempre.
           </div>
         </div>
       </div>

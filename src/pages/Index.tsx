@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { BootScreen } from "@/components/BootScreen";
 import { Desktop } from "@/components/Desktop";
+import { MacintoshFrame } from "@/components/MacintoshFrame";
 
 const Index = () => {
   const [booted, setBooted] = useState(false);
@@ -10,7 +11,9 @@ const Index = () => {
       {!booted ? (
         <BootScreen onBootComplete={() => setBooted(true)} />
       ) : (
-        <Desktop />
+        <MacintoshFrame>
+          <Desktop />
+        </MacintoshFrame>
       )}
     </>
   );

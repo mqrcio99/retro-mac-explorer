@@ -6,21 +6,23 @@ import { FinderContent } from "./windows/FinderWindow";
 import { HistoryContent } from "./windows/HistoryWindow";
 import { AboutContent } from "./windows/AboutWindow";
 import { TeamContent } from "./windows/TeamWindow";
+import { PaintContent } from "./windows/PaintWindow";
 
-type WindowType = "finder" | "history" | "about" | "team" | null;
+type WindowType = "finder" | "history" | "about" | "team" | "paint" | null;
 
 export const Desktop = () => {
   const [openWindow, setOpenWindow] = useState<WindowType>(null);
 
   const icons = [
     { id: "finder", icon: "📁", label: "Finder", window: "finder" as WindowType },
-    { id: "history", icon: "📜", label: "History", window: "history" as WindowType },
-    { id: "team", icon: "👥", label: "The Team", window: "team" as WindowType },
-    { id: "about", icon: "ℹ️", label: "About Mac", window: "about" as WindowType },
+    { id: "history", icon: "📜", label: "História", window: "history" as WindowType },
+    { id: "team", icon: "👥", label: "A Equipe", window: "team" as WindowType },
+    { id: "about", icon: "ℹ️", label: "Sobre o Mac", window: "about" as WindowType },
+    { id: "paint", icon: "💾", label: "MacPaint", window: "paint" as WindowType },
   ];
 
   return (
-    <div className="h-screen flex flex-col bg-[hsl(var(--mac-desktop))] crt-effect">
+    <div className="h-full flex flex-col bg-[hsl(var(--mac-desktop))] crt-effect">
       <MenuBar />
       
       <div className="flex-1 p-4 relative">
@@ -48,7 +50,7 @@ export const Desktop = () => {
 
         {openWindow === "history" && (
           <Window
-            title="History Disk"
+            title="Disco de História"
             onClose={() => setOpenWindow(null)}
             width="w-[650px]"
             height="h-[600px]"
@@ -59,7 +61,7 @@ export const Desktop = () => {
 
         {openWindow === "about" && (
           <Window
-            title="About This Macintosh"
+            title="Sobre Este Macintosh"
             onClose={() => setOpenWindow(null)}
             width="w-[500px]"
             height="h-[600px]"
@@ -70,7 +72,7 @@ export const Desktop = () => {
 
         {openWindow === "team" && (
           <Window
-            title="The Team"
+            title="A Equipe"
             onClose={() => setOpenWindow(null)}
             width="w-[600px]"
             height="h-[650px]"
@@ -78,11 +80,22 @@ export const Desktop = () => {
             <TeamContent />
           </Window>
         )}
+
+        {openWindow === "paint" && (
+          <Window
+            title="MacPaint"
+            onClose={() => setOpenWindow(null)}
+            width="w-[580px]"
+            height="h-[550px]"
+          >
+            <PaintContent />
+          </Window>
+        )}
       </div>
 
       {/* Footer Credits */}
       <div className="h-6 bg-[hsl(var(--mac-menu-bar))] border-t border-[hsl(var(--mac-border-dark))] flex items-center justify-center text-xs font-mono text-muted-foreground">
-        Macintosh System 1.0 Recreation © 2024 • Built with ❤️ for vintage computing
+        Recriação do Macintosh System 1.0 © 2024 • Feito com ❤️ para computação vintage
       </div>
     </div>
   );
