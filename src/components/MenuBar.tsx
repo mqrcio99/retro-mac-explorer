@@ -16,20 +16,20 @@ export const MenuBar = () => {
   };
 
   return (
-    <div className="h-8 bg-[hsl(var(--mac-menu-bar))] border-b border-[hsl(var(--mac-border-dark))] flex items-center px-2 text-sm font-mono relative">
-      <div className="flex items-center gap-4">
+    <div className="h-7 md:h-8 bg-[hsl(var(--mac-menu-bar))] border-b border-[hsl(var(--mac-border-dark))] flex items-center px-1 md:px-2 text-xs md:text-sm font-mono relative">
+      <div className="flex items-center gap-1 md:gap-4">
         <div 
-          className="flex items-center gap-1 hover:bg-muted px-2 py-0.5 cursor-pointer relative"
+          className="flex items-center gap-1 hover:bg-muted px-1 md:px-2 py-0.5 cursor-pointer relative"
           onClick={() => handleMenuClick('apple')}
         >
-          <span className="text-xl">🍎</span>
+          <span className="text-lg md:text-xl">🍎</span>
           {openMenu === 'apple' && (
-            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[180px]">
+            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[150px] md:min-w-[180px]">
               {menus.apple.map((item, i) => (
                 item === null ? (
                   <div key={i} className="border-t border-[hsl(var(--mac-border-dark))] my-1" />
                 ) : (
-                  <div key={i} className="px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer">
+                  <div key={i} className="px-2 md:px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer text-xs md:text-sm">
                     {item}
                   </div>
                 )
@@ -39,17 +39,18 @@ export const MenuBar = () => {
         </div>
         
         <div 
-          className="hover:bg-muted px-2 py-0.5 cursor-pointer relative"
+          className="hover:bg-muted px-1 md:px-2 py-0.5 cursor-pointer relative"
           onClick={() => handleMenuClick('file')}
         >
-          Arquivo
+          <span className="hidden sm:inline">Arquivo</span>
+          <span className="sm:hidden">Arq</span>
           {openMenu === 'file' && (
-            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[180px]">
+            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[150px] md:min-w-[180px]">
               {menus.file.map((item, i) => (
                 item === null ? (
                   <div key={i} className="border-t border-[hsl(var(--mac-border-dark))] my-1" />
                 ) : (
-                  <div key={i} className="px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer">
+                  <div key={i} className="px-2 md:px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer text-xs md:text-sm">
                     {item}
                   </div>
                 )
@@ -59,17 +60,18 @@ export const MenuBar = () => {
         </div>
         
         <div 
-          className="hover:bg-muted px-2 py-0.5 cursor-pointer relative"
+          className="hover:bg-muted px-1 md:px-2 py-0.5 cursor-pointer relative"
           onClick={() => handleMenuClick('edit')}
         >
-          Editar
+          <span className="hidden sm:inline">Editar</span>
+          <span className="sm:hidden">Edit</span>
           {openMenu === 'edit' && (
-            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[180px]">
+            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[150px] md:min-w-[180px]">
               {menus.edit.map((item, i) => (
                 item === null ? (
                   <div key={i} className="border-t border-[hsl(var(--mac-border-dark))] my-1" />
                 ) : (
-                  <div key={i} className="px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer">
+                  <div key={i} className="px-2 md:px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer text-xs md:text-sm">
                     {item}
                   </div>
                 )
@@ -79,14 +81,14 @@ export const MenuBar = () => {
         </div>
         
         <div 
-          className="hover:bg-muted px-2 py-0.5 cursor-pointer relative"
+          className="hover:bg-muted px-1 md:px-2 py-0.5 cursor-pointer relative"
           onClick={() => handleMenuClick('view')}
         >
           Ver
           {openMenu === 'view' && (
-            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[180px]">
+            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[150px] md:min-w-[180px]">
               {menus.view.map((item, i) => (
-                <div key={i} className="px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer">
+                <div key={i} className="px-2 md:px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer text-xs md:text-sm">
                   {item}
                 </div>
               ))}
@@ -95,17 +97,17 @@ export const MenuBar = () => {
         </div>
         
         <div 
-          className="hover:bg-muted px-2 py-0.5 cursor-pointer relative"
+          className="hidden sm:block hover:bg-muted px-1 md:px-2 py-0.5 cursor-pointer relative"
           onClick={() => handleMenuClick('special')}
         >
           Especial
           {openMenu === 'special' && (
-            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[180px]">
+            <div className="absolute top-full left-0 mt-0.5 bg-background border-2 border-[hsl(var(--mac-border-dark))] shadow-lg z-50 min-w-[150px] md:min-w-[180px]">
               {menus.special.map((item, i) => (
                 item === null ? (
                   <div key={i} className="border-t border-[hsl(var(--mac-border-dark))] my-1" />
                 ) : (
-                  <div key={i} className="px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer">
+                  <div key={i} className="px-2 md:px-3 py-1 hover:bg-primary hover:text-primary-foreground cursor-pointer text-xs md:text-sm">
                     {item}
                   </div>
                 )

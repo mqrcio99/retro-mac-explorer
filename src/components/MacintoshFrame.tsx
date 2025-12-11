@@ -6,17 +6,24 @@ interface MacintoshFrameProps {
 
 export const MacintoshFrame = ({ children }: MacintoshFrameProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center p-4">
-      {/* Macintosh Computer Frame */}
-      <div className="relative">
+    <div className="min-h-screen bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center p-2 md:p-4">
+      {/* Mobile: Full screen without frame */}
+      <div className="block md:hidden w-full h-screen">
+        <div className="w-full h-full bg-[hsl(var(--mac-desktop))] relative overflow-hidden">
+          {children}
+        </div>
+      </div>
+
+      {/* Desktop: Macintosh Computer Frame */}
+      <div className="hidden md:block relative">
         {/* Monitor bezel */}
-        <div className="bg-gradient-to-b from-slate-100 to-slate-300 rounded-lg p-8 shadow-2xl">
+        <div className="bg-gradient-to-b from-slate-100 to-slate-300 rounded-lg p-4 lg:p-8 shadow-2xl">
           {/* Screen border */}
-          <div className="bg-slate-800 p-3 rounded">
+          <div className="bg-slate-800 p-2 lg:p-3 rounded">
             {/* Screen glow effect */}
             <div className="relative bg-black rounded shadow-inner">
               {/* Actual screen content */}
-              <div className="w-[900px] h-[600px] bg-[hsl(var(--mac-desktop))] relative overflow-hidden">
+              <div className="w-[600px] lg:w-[900px] h-[450px] lg:h-[600px] bg-[hsl(var(--mac-desktop))] relative overflow-hidden">
                 {children}
               </div>
               {/* Screen glare effect */}
@@ -25,13 +32,13 @@ export const MacintoshFrame = ({ children }: MacintoshFrameProps) => {
           </div>
           
           {/* Apple logo on bezel */}
-          <div className="flex justify-center mt-4">
-            <div className="text-2xl opacity-60">🍎</div>
+          <div className="flex justify-center mt-3 lg:mt-4">
+            <div className="text-xl lg:text-2xl opacity-60">🍎</div>
           </div>
         </div>
         
         {/* Base stand */}
-        <div className="mx-auto w-32 h-8 bg-gradient-to-b from-slate-300 to-slate-400 rounded-b-lg shadow-lg" />
+        <div className="mx-auto w-24 lg:w-32 h-6 lg:h-8 bg-gradient-to-b from-slate-300 to-slate-400 rounded-b-lg shadow-lg" />
       </div>
     </div>
   );
