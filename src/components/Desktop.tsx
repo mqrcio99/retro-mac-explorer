@@ -25,8 +25,8 @@ export const Desktop = () => {
     <div className="h-full flex flex-col bg-[hsl(var(--mac-desktop))] crt-effect">
       <MenuBar />
       
-      <div className="flex-1 p-4 relative">
-        <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+      <div className="flex-1 p-2 md:p-4 relative overflow-auto">
+        <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-4">
           {icons.map((item) => (
             <DesktopIcon
               key={item.id}
@@ -94,8 +94,9 @@ export const Desktop = () => {
       </div>
 
       {/* Footer Credits */}
-      <div className="h-6 bg-[hsl(var(--mac-menu-bar))] border-t border-[hsl(var(--mac-border-dark))] flex items-center justify-center text-xs font-mono text-muted-foreground">
-        Recriação do Macintosh System 1.0 © 2024 • Feito com ❤️ para computação vintage
+      <div className="h-5 md:h-6 bg-[hsl(var(--mac-menu-bar))] border-t border-[hsl(var(--mac-border-dark))] flex items-center justify-center text-[10px] md:text-xs font-mono text-muted-foreground px-2">
+        <span className="hidden sm:inline">Recriação do Macintosh System 1.0 © 2024 • Feito com ❤️ para computação vintage</span>
+        <span className="sm:hidden">Macintosh 1984 • Recriação</span>
       </div>
     </div>
   );
